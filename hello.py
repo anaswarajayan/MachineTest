@@ -34,13 +34,13 @@ formatedData['companyLinks']['nse'] = all_links[2].get('href')
 
 topRatios =  rawData.find('ul', attrs = {'id':'top-ratios'})
 
-formatedData['companyLinks']['topRatios'] =[]
+formatedData['topRatios'] =[]
 
 for li in topRatios.find_all('li'):
     text = li.find('span', class_='name').text.lstrip().rstrip()
     value =  li.find('span', class_='number').text.lstrip().rstrip()
     temp = { 'name': text , 'value' : value }
-    formatedData['companyLinks']['topRatios'].append(temp)
+    formatedData['topRatios'].append(temp)
 
 
 print(formatedData)
